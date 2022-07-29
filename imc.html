@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="stylesheet" href="imc.css">
+</head>
+<body>
+    <h1>CALCULE SEU IMC</h1>
+    <main>
+
+        <section class="imc">
+            <img src="imagem.jpg" alt="balanca e fita" class="ilustracao">
+        
+        
+            <div class="conteudo">
+            Digite seu peso: <input type="number" name="peso" id="peso">Kg.</br>
+            Digite sua altura: <input type="number" name="altura" id="altura" >Metros.</BR>
+            <input type="button" value="Calcular" onclick="clicar()">
+            <div id="res">
+                Resultado
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <script>
+        function clicar() {
+        var ps = window.document.getElementById('peso')
+        var alt = window.document.getElementById('altura')
+        var re = window.document.getElementById('res')
+        var a = Number(ps.value)
+        var b = Number(alt.value)
+        var s = a / b**2
+        
+
+        if (s < 16) {
+            re.innerHTML = `Magreza grave`
+            re.style.color = 'red'
+        } else if (s <= 18.5) {
+            re.innerHTML = `Abaixo do peso`
+            re.style.color = 'rgb(191, 204, 2)'
+        } else if (s <= 24.9) {
+            re.innerHTML = `Peso normal`
+            re.style.color = 'green'
+        } else if (s <= 29.9) {
+            re.innerHTML = `Sobrepeso`
+            re.style.color = 'rgb(191, 204, 2)'
+        } else if (s <= 34.9) {
+            re.innerHTML = `Obesidade grau 1`
+            re.style.color = 'rgb(191, 204, 2)'
+        } else if (s <= 39.9) {
+            re.innerHTML = `Obesidade grau 2`
+            re.style.color = 'orange'
+        } else if (s >= 40) {
+            re.innerHTML = `Obesidade mórbida`
+            re.style.color = 'red'
+        }
+
+    }
+    </script>
+
+</body>
+</html>
